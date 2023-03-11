@@ -1,0 +1,22 @@
+{
+	"manifest_version": 3,
+	"name": "CookieSync",
+	"description": "saves your progress in cookie clicker to your gmail"
+	"version": "1.0.0",
+	"author": "TheOneAndOnlyDanSan",
+	"icons": {"128": "icon.png"},
+	"permissions": ["storage", "tabs"],
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {},
+	"content_scripts": [{
+		"matches": ["https://orteil.dashnet.org/cookieclicker/"],
+		"js": ["js/content.js"],
+		"run_at": "document_end"
+    }],
+	"web_accessible_resources": [{
+		"resources": ["/js/inject/*"],
+		"matches": ["https://orteil.dashnet.org/*"]
+	}]
+}

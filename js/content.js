@@ -15,12 +15,3 @@ window.addEventListener("getSave", function(event) {
 window.addEventListener("setSave", async function(event) {	
 	await chrome.storage.sync.set(event.detail);
 });
-
-window.addEventListener("showAll", async function(event) {	
-	console.log(await chrome.storage.sync.get(null));
-});
-
-window.addEventListener("clear", async function(event) {	
-	console.log(await chrome.storage.sync.clear());
-});
-

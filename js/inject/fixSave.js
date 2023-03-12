@@ -1,11 +1,3 @@
-var showAll = function() {
-	window.dispatchEvent(new CustomEvent("showAll"));
-}
-
-var clear = function() {
-	window.dispatchEvent(new CustomEvent("clear"));
-}
-
 var url = window.location.href;
 var save;
 var load = false;

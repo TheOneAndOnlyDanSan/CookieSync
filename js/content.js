@@ -6,12 +6,21 @@ s.onload = function () {
 };
 (document.head || document.documentElement).appendChild(s);
 
-window.addEventListener("getSave", function() {
-	chrome.storage.sync.get("save", function(get) {
-		window.dispatchEvent(new CustomEvent("returnSave", {detail: get.save}));
+window.addEventListener("getSave", function(event) {
+	chrome.storage.sync.get(event.detail, function(get) {
+		window.dispatchEvent(new CustomEvent("returnSave", {detail: get[event.detail]}));
 	});
 });
 
 window.addEventListener("setSave", async function(event) {	
-	await chrome.storage.sync.set({save: event.detail});
+	await chrome.storage.sync.set(event.detail);
 });
+
+window.addEventListener("showAll", async function(event) {	
+	console.log(await chrome.storage.sync.get(null));
+});
+
+window.addEventListener("clear", async function(event) {	
+	console.log(await chrome.storage.sync.clear());
+});
+

@@ -11,12 +11,18 @@
 	},
 	"action": {},
 	"content_scripts": [{
-		"matches": ["https://orteil.dashnet.org/cookieclicker/"],
+		"matches": [
+			"https://orteil.dashnet.org/cookieclicker/*",
+			"http://orteil.dashnet.org/cookieclicker/*"
+		],
 		"js": ["js/content.js"],
 		"run_at": "document_end"
     }],
 	"web_accessible_resources": [{
 		"resources": ["/js/inject/*"],
-		"matches": ["https://orteil.dashnet.org/*"]
+		"matches": [
+			"https://orteil.dashnet.org/*",
+			"http://orteil.dashnet.org/*"
+		]
 	}]
 }

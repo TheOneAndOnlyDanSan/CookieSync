@@ -1,5 +1,5 @@
 var s = document.createElement("script");
-s.src = chrome.runtime.getURL("js/inject/fixGame.js");
+s.src = chrome.runtime.getURL("js/inject/fixSave.js");
 s.async = false;
 s.onload = function () {
 	this.parentNode.removeChild(this);

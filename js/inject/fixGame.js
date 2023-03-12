@@ -17,7 +17,7 @@ window.addEventListener("returnSave", function(event) {
 window.dispatchEvent(new CustomEvent("getSave"));
 
 var isLoaded = function() {
-    if(load == true) {
+    if(load === false) {
        window.setTimeout(isLoaded, 50);
     } else {
 		
